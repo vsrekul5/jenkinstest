@@ -18,5 +18,10 @@ pipeline {
                 echo 'Deploying: The software will now be deployed!'
             }
         }
-    }  
+    }
+    post {
+        always {
+             echo 'post operation'
+        }
+    }
 }
