@@ -5,7 +5,7 @@ pipeline {
         
         stage('Testing') {
             steps {
-                echo Testing : The Artifact will be tested'
+                echo 'Testing : The Artifact will be tested'
             }
         }
         stage('build') {
