@@ -3,25 +3,31 @@ pipeline {
 
     stages {
         
+        stage('Building') {
+            steps {
+                echo 'The Code will be now be built into an artifact'
+            }
+        }
+        stage('Artifact Archiving') {
+            steps {
+                echo 'The Artifact will be uploaded to an artifact repository'
+            }
+        }
         stage('Testing') {
             steps {
-                echo 'Testing : The Artifact will be tested'
+                echo 'The Artifact will be tested'
             }
         }
-        stage('build') {
+        stage('Staging') {
             steps {
-                echo 'build:The Artifact will be tested'
+                echo 'The Artifact is staged onto the staging server'
             }
         }
-       stage('Deploy') {
+        
+        stage('Deploy') {
             steps {
-                echo 'Deploying: The software will now be deployed!'
+                echo 'The software will now be deployed!'
             }
         }
-    }
-    post {
-        always {
-             echo 'post operation'
-        }
-    }
+    }    
 }
